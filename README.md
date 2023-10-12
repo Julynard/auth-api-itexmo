@@ -7,52 +7,58 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Setup 
+## Clone or Download the frontend and backend
+Laravel - https://github.com/Julynard/auth-api-itexmo
+Vue - https://github.com/Julynard/front-end-ordering-system
+
+## COMMANDS
+1. From the directory of laravel 
+    Run this commands
+    - composer install
+    - npm install
+    - after creating a DB run 'php artisan migrate --seed'
+    - php artisan serve
+2. From the directory of Vue app
+    Run this command
+    - npm install && npm run dev
+
+## SETUP  
 .env file
-DB_DATABASE=auth_api_itexmo
+- createa a database name with uth_api_itexmo then change the DB_DATABASE=auth_api_itexmo
+- add the ff after FRONTEND_URL=http://localhost:3000
+1. SANCTUM_STATEFUL_DOMAINS=localhost:3000
+2. SESSION_DOMAIN=localhost
 
+- for the MAIL
 
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=465
+MAIL_USERNAME=tagoonjulynard@gmail.com <- you can change this email
+MAIL_PASSWORD=zmlyyyaxsglzjcuw <- to generate this follow the HOW TO GENERATE MAIL_PASSWORD
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS="tagoonjulynard@gmail.com" <- you can change this email
+MAIL_FROM_NAME="${APP_NAME}"
 
-## Learning Laravel
+## HOW TO GENERATE MAIL_PASSWORD using gmail account
+1. from gmail you can use dummy account, click the profile icon (located in top-right).
+2. then click 'manage your google account'
+3. then click Security (located in left sidebar)
+4. then go to 'How do you sign in to Google'
+5. then click '2-step verification' and then it will display a verification, enter your password.
+6. once login again, make sure to turn on the 2-step verification
+7. scroll down then you will see 'App passwords' click it the > icon
+8. then put a name for the app password then it will generate a series of code.
+9. copy it then remove the spaces between letters then paste it 'MAIL_PASSWORD'
+10. after that go to config/mail.php > you can easily navigate "Ctrl+P" type mail.php
+11. change the email to your own dummy email
+    'from' => [
+            'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+            'name' => env('MAIL_FROM_NAME', 'Example'),
+        ],
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Test API unit testing 
+1. from directory of Laravel 
+    Run this commands
+    - php artisan test --filter=ProductControllerTest
+    - php artisan test --filter=CustomerControllerTest
