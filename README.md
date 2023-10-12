@@ -31,14 +31,16 @@ Vue - https://github.com/Julynard/front-end-ordering-system
 
 - for the MAIL
 
-MAIL_MAILER=smtp
-MAIL_HOST=smtp.gmail.com
-MAIL_PORT=465
-MAIL_USERNAME=tagoonjulynard@gmail.com <- you can change this email
-MAIL_PASSWORD=zmlyyyaxsglzjcuw <- to generate this follow the HOW TO GENERATE MAIL_PASSWORD
-MAIL_ENCRYPTION=ssl
-MAIL_FROM_ADDRESS="tagoonjulynard@gmail.com" <- you can change this email
-MAIL_FROM_NAME="${APP_NAME}"
+<pre>
+    MAIL_MAILER=smtp
+    MAIL_HOST=smtp.gmail.com
+    MAIL_PORT=465
+    MAIL_USERNAME=tagoonjulynard@gmail.com <- you can change this email
+    MAIL_PASSWORD=zmlyyyaxsglzjcuw <- to generate this follow the HOW TO GENERATE MAIL_PASSWORD
+    MAIL_ENCRYPTION=ssl
+    MAIL_FROM_ADDRESS="tagoonjulynard@gmail.com" <- you can change this email
+    MAIL_FROM_NAME="${APP_NAME}"
+</pre>
 
 ## HOW TO GENERATE MAIL_PASSWORD using gmail account
 1. from gmail you can use dummy account, click the profile icon (located in top-right).
@@ -52,7 +54,7 @@ MAIL_FROM_NAME="${APP_NAME}"
 9. copy it then remove the spaces between letters then paste it 'MAIL_PASSWORD'
 10. after that go to config/mail.php > you can easily navigate "Ctrl+P" type mail.php
 11. change the email to your own dummy email
-    'from' => [
+    <br> 'from' => [
             'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
             'name' => env('MAIL_FROM_NAME', 'Example'),
         ],
